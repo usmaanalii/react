@@ -1,0 +1,25 @@
+{
+  "name": "official-react-tutorial",
+  "version": "1.0.0",
+  "description": "React tutorial from the official react page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usyyy/react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Usmaan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/usyyy/react/issues"
+  },
+  "homepage": "https://github.com/usyyy/react#readme",
+  "dependencies": {
+    "create-react-app": "^1.4.1"
+  }
+}
