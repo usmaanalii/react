@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory, IndexLink } from 'react-router';
 
 const Home = () => <h1>Hello from Home!</h1>
+
+const About = (props) => (
+  <div>
+    <h3>Welcome to the About Page</h3>
+    {props.params.name && <h2>Hello, {props.params.name}</h2>}
+  </div>
+)
+
 const Address = (props) => (
   <div>
     <br/>
@@ -17,12 +25,25 @@ const TwitterFeed = () => <h3>Twitter Feed</h3>
 
 const NotFound = () => <h1>404.. This page is not found!</h1>
 
+const Query = (props) => (
+  <h2>{props.location.query.message}</h2>
+)
+
 const Nav = () => (
   <div>
     <IndexLink activeClassName='active' to='/'>Home</IndexLink>&nbsp;
     <IndexLink activeClassName='active' to='/address'>Address</IndexLink>
     <IndexLink activeClassName='active' to='/about'>About</IndexLink>
     <IndexLink activeClassName='active' to='/namedComponent'>Named Components</IndexLink>
+    <IndexLink
+      activeClassName='active'
+      to={{
+        pathname: '/address/query',
+        query: { message: 'Hello from Route Query' }
+      }}
+    >
+      Route Query
+    </IndexLink>
   </div>
 )
 
@@ -54,10 +75,12 @@ class App extends Component {
           <Route path='address' component={Address}>
             <IndexRoute component={TwitterFeed} />
             <Route path='instagram' component={Instagram} />
+            <Route path='query' component={ Query } />
           </Route>
           <Route path='/namedComponent' component = { NamedComponents }>
             <IndexRoute components={{ title: Title, subTitle: SubTitle }} />
           </Route>
+          <Route path='/about(/:name)' component={About} />
           <Route path='*' component={NotFound} />
         </Route>
       </Router>
