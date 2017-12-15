@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <title>Hello World</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const rootElement = document.querySelector('#root');
+    // const element = React.createElement(
+    //   'div',
+    //   { className: 'container' },
+    //   'Hello World'
+    // )
+    const content = 'Hello World';
+    const myClassName = 'container';
+    const props = {
+      className: 'container',
+      children: 'Hello World'
+    }
+    const element = <div {...props} >Hello There</div>;
+    ReactDOM.render(element, rootElement);
+  </script>
+</body>
+
+</html>

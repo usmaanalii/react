@@ -1,0 +1,15 @@
+{
+  "name": "beginners-guide-egghead-io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bs": "browser-sync start --server --files '*.html, src/css/*.css, src/img/*.(png|svg)'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
